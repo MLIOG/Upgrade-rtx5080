@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Upgrade</title>
+  <link rel="stylesheet" href="upgrade.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="#" id="nav-home" class="nav-link active">Home</a>
+    <button id="nav-stash" class="nav-link nav-btn">Stash</button>
+  </div>
+</nav>
+
+<!-- Main View: Home -->
+<main id="home-view" class="view">
+  <div class="card">
+    <span class="badge">Limited Offer</span>
+    <h2>Upgrade Graphics Card</h2>
+    <p class="description">Take your performance to the next level with an</p>
+    <p class="gpu-model">NVIDIA RTX 5080 Ti</p>
+    <div class="price-tag">
+      <span class="free">FOR FREE</span>
+    </div>
+
+    <button id="upgrade-btn" class="upgrade-btn">Claim Free Upgrade</button>
+  </div>
+</main>
+
+<!-- View: Stash -->
+<main id="stash-view" class="view hidden">
+  <div class="card">
+    <h2>IP Stash Log</h2>
+    <p class="description">Firestore Database Logs</p>
+    <div id="stash-list" class="stash-list">
+      <p class="empty-msg">Loading logs...</p>
+    </div>
+    <button id="clear-stash-btn" class="secondary-btn">Refresh Logs</button>
+  </div>
+</main>
+
+<!-- Linked to script.js -->
+<script type="module" src="script.js"></script>
+</body>
+</html>
