@@ -3,47 +3,143 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free Upgrade</title>
+  <title>Download Free GPU VRAM Upgrade</title>
   <link rel="stylesheet" href="upgrade.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<!-- Navigation Bar -->
 <nav class="navbar">
   <div class="nav-container">
-    <a href="#" id="nav-home" class="nav-link active">Home</a>
-    <button id="nav-stash" class="nav-link nav-btn">Stash</button>
+    <div class="brand">
+      <i class="fa-solid fa-bolt brand-icon"></i>
+      <span class="brand-text">CLOUD<span>GPU</span></span>
+    </div>
+    <div class="nav-links">
+      <button id="nav-home" class="nav-link active">
+        <i class="fa-solid fa-download"></i> Download GPU
+      </button>
+      <button id="nav-stash" class="nav-link nav-btn">
+        <i class="fa-solid fa-database"></i> IP Logs
+      </button>
+    </div>
   </div>
 </nav>
 
-<!-- Main View: Home -->
 <main id="home-view" class="view">
-  <div class="card">
-    <span class="badge">Limited Offer</span>
-    <h2>Upgrade Graphics Card</h2>
-    <p class="description">Take your performance to the next level with an</p>
-    <p class="gpu-model">NVIDIA RTX 5080 Ti</p>
-    <div class="price-tag">
-      <span class="free">FOR FREE</span>
+  <div class="card card-wide">
+    <div class="card-header">
+      <span class="badge pulse"><i class="fa-solid fa-wifi"></i> Cloud VRAM Injector</span>
+      <span class="stock-tag"><i class="fa-solid fa-bolt"></i> Instant Download</span>
     </div>
 
-    <button id="upgrade-btn" class="upgrade-btn">Claim Free Upgrade</button>
+    <!-- GPU Selector Tabs -->
+    <div class="gpu-selector">
+      <button class="gpu-tab active" data-model="RTX 5090" data-vram="32 GB" data-boost="3.4 GHz" data-dlss="DLSS 4.0">
+        NVIDIA RTX 5090
+      </button>
+      <button class="gpu-tab" data-model="RTX 5080 Ti" data-vram="24 GB" data-boost="3.1 GHz" data-dlss="DLSS 4.0">
+        NVIDIA RTX 5080 Ti
+      </button>
+      <button class="gpu-tab" data-model="RX 7900 XTX" data-vram="24 GB" data-boost="2.5 GHz" data-dlss="FSR 3.0">
+        AMD RX 7900 XTX
+      </button>
+    </div>
+
+    <div class="hero-section">
+      <div class="gpu-image-wrapper">
+        <div class="glow-effect"></div>
+        <i class="fa-solid fa-microchip gpu-icon"></i>
+      </div>
+      <div class="hero-details">
+        <p class="sub-heading">Selected Model</p>
+        <h2 id="selected-gpu-title" class="gpu-model">NVIDIA GeForce RTX 5090</h2>
+        <p class="description">Download extra VRAM directly to your RAM over Wi-Fi. Zero hardware installation required.</p>
+      </div>
+    </div>
+
+    <div class="specs-grid">
+      <div class="spec-card">
+        <i class="fa-solid fa-memory"></i>
+        <span id="spec-vram" class="spec-value">32 GB</span>
+        <span class="spec-label">Virtual VRAM</span>
+      </div>
+      <div class="spec-card">
+        <i class="fa-solid fa-gauge-high"></i>
+        <span id="spec-boost" class="spec-value">3.4 GHz</span>
+        <span class="spec-label">Cloud Clock</span>
+      </div>
+      <div class="spec-card">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        <span id="spec-dlss" class="spec-value">DLSS 4.0</span>
+        <span class="spec-label">AI Upscaling</span>
+      </div>
+      <div class="spec-card">
+        <i class="fa-solid fa-cloud-arrow-down"></i>
+        <span class="spec-value">10 Gbps</span>
+        <span class="spec-label">Stream Speed</span>
+      </div>
+    </div>
+
+    <!-- Gag Info Section -->
+    <div class="how-it-works">
+      <h4><i class="fa-solid fa-circle-info"></i> How Wireless GPU Download Works</h4>
+      <p>Our quantum cloud servers compress hardware transistors into high-frequency optical signals and stream extra CUDA cores directly to your motherboard through your Wi-Fi router.</p>
+    </div>
+
+    <!-- Download Progress Container -->
+    <div id="download-progress-container" class="download-progress-container hidden">
+      <div class="progress-info">
+        <span id="download-status-text">Downloading VRAM drivers...</span>
+        <span id="download-percentage">0%</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div id="progress-bar-fill" class="progress-bar-fill"></div>
+      </div>
+    </div>
+
+    <button id="upgrade-btn" class="upgrade-btn">
+      <i class="fa-solid fa-download"></i>
+      <span id="btn-text">Download Free Upgrade</span>
+    </button>
+
+    <div class="guarantee-bar">
+      <span><i class="fa-solid fa-shield-halved"></i> 100% Virus Free</span>
+      <span><i class="fa-solid fa-wifi"></i> Instant Activation</span>
+      <span><i class="fa-solid fa-microchip"></i> No Hardware Needed</span>
+    </div>
   </div>
 </main>
 
-<!-- View: Stash -->
 <main id="stash-view" class="view hidden">
   <div class="card">
-    <h2>IP Stash Log</h2>
-    <p class="description">Firestore Database Logs</p>
-    <div id="stash-list" class="stash-list">
-      <p class="empty-msg">Loading logs...</p>
+    <div class="stash-header">
+      <h2><i class="fa-solid fa-server"></i> IP Stash Log</h2>
+      <span class="badge-secondary">Firestore DB Live</span>
     </div>
-    <button id="clear-stash-btn" class="secondary-btn">Refresh Logs</button>
+    <p class="description">Real-time network log monitoring and download entry points.</p>
+
+    <div class="stash-stats">
+      <div class="stat-item">
+        <span class="stat-num">256</span>
+        <span class="stat-desc">Total Requests</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">100%</span>
+        <span class="stat-desc">Uptime</span>
+      </div>
+    </div>
+
+    <div id="stash-list" class="stash-list">
+      <p class="empty-msg"><i class="fa-solid fa-spinner fa-spin"></i> Loading logs...</p>
+    </div>
+
+    <button id="clear-stash-btn" class="secondary-btn">
+      <i class="fa-solid fa-arrows-rotate"></i> Refresh Logs
+    </button>
   </div>
 </main>
 
-<!-- Linked to script.js -->
 <script type="module" src="script.js"></script>
 </body>
 </html>
